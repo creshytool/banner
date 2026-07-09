@@ -1,0 +1,1328 @@
+<div class="bmTool">
+
+    <div class="bmHeader">
+        <h3 class="bmTitle">Banner Maker</h3>
+        <div class="bmDim" data-bm="dimDisplay">Twitter Header — 1500 × 500</div>
+    </div>
+
+    <div class="bmStage" data-bm="stage" tabindex="0">
+        <canvas data-bm="canvas"></canvas>
+        <div class="bmEmptyMsg" data-bm="emptyMsg">Upload an image, drag &amp; drop it here, or paste (Ctrl+V)</div>
+        <div class="bmDropOverlay" data-bm="dropOverlay">Drop image to upload</div>
+    </div>
+
+    <div class="bmMoveRow">
+        <span class="bmMoveLabel">Move:</span>
+        <div class="bmSeg" data-bm="moveSeg">
+            <button type="button" class="bmSegBtn active" data-bm-move="image">Image</button>
+            <button type="button" class="bmSegBtn" data-bm-move="text" data-bm="moveTextBtn" disabled>Text</button>
+            <button type="button" class="bmSegBtn" data-bm-move="logo" data-bm="moveLogoBtn" disabled>Logo</button>
+        </div>
+        <span class="bmHint">Drag to reposition • pinch/scroll to zoom • arrow keys to nudge</span>
+    </div>
+
+    <div class="bmTabs" data-bm="tabs">
+        <button type="button" class="bmTabBtn active" data-bm-tab="size">Size</button>
+        <button type="button" class="bmTabBtn" data-bm-tab="image">Image</button>
+        <button type="button" class="bmTabBtn" data-bm-tab="text">Text</button>
+        <button type="button" class="bmTabBtn" data-bm-tab="logo">Logo</button>
+        <button type="button" class="bmTabBtn" data-bm-tab="style">Style</button>
+    </div>
+
+    <!-- SIZE PANEL -->
+    <div class="bmPanel active" data-bm-panel="size">
+        <div class="bmPlatformGrid" data-bm="platformGrid">
+            <div class="bmPlatformCard active" data-w="1500" data-h="500" data-name="Twitter Header"><span>Twitter</span><small>1500×500</small></div>
+            <div class="bmPlatformCard" data-w="851" data-h="315" data-name="Facebook Cover"><span>Facebook</span><small>851×315</small></div>
+            <div class="bmPlatformCard" data-w="1584" data-h="396" data-name="LinkedIn Banner"><span>LinkedIn</span><small>1584×396</small></div>
+            <div class="bmPlatformCard" data-w="2560" data-h="1440" data-name="YouTube Channel"><span>YouTube</span><small>2560×1440</small></div>
+            <div class="bmPlatformCard" data-w="1080" data-h="1920" data-name="IG Story"><span>IG Story</span><small>1080×1920</small></div>
+            <div class="bmPlatformCard" data-w="1080" data-h="1080" data-name="IG Post"><span>IG Post</span><small>1080×1080</small></div>
+            <div class="bmPlatformCard" data-w="1200" data-h="628" data-name="Ad Banner"><span>Ads</span><small>1200×628</small></div>
+            <div class="bmPlatformCard" data-w="1200" data-h="675" data-name="TikTok / Pin"><span>Pinterest</span><small>1200×675</small></div>
+            <div class="bmPlatformCard" data-w="600" data-h="200" data-name="Email Header"><span>Email</span><small>600×200</small></div>
+        </div>
+        <div class="bmCustomSize">
+            <div class="bmField">
+                <label>Custom Width (px)</label>
+                <input type="number" min="50" max="4000" value="1500" data-bm="customW">
+            </div>
+            <div class="bmField">
+                <label>Custom Height (px)</label>
+                <input type="number" min="50" max="4000" value="500" data-bm="customH">
+            </div>
+            <button type="button" class="bmBtn bmBtnIndigo" data-bm="applyCustom">Apply Size</button>
+        </div>
+        <div class="bmFieldInline">
+            <label>Fit Mode</label>
+            <div class="bmSeg">
+                <button type="button" class="bmSegBtn active" data-bm-fit="cover">Cover</button>
+                <button type="button" class="bmSegBtn" data-bm-fit="contain">Contain</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE PANEL -->
+    <div class="bmPanel" data-bm-panel="image">
+        <div class="bmControlsGrid">
+            <div class="bmControlBox">
+                <label>Zoom <span data-bm="zoomVal">100%</span></label>
+                <input type="range" min="1" max="4" step="0.05" value="1" data-bm="zoom">
+            </div>
+            <div class="bmControlBox">
+                <label>Rotate <span data-bm="rotateVal">0°</span></label>
+                <input type="range" min="-180" max="180" step="1" value="0" data-bm="rotate">
+            </div>
+            <div class="bmControlBox">
+                <label>Brightness <span data-bm="brightnessVal">100%</span></label>
+                <input type="range" min="0" max="2" step="0.05" value="1" data-bm="brightness">
+            </div>
+            <div class="bmControlBox">
+                <label>Contrast <span data-bm="contrastVal">100%</span></label>
+                <input type="range" min="0" max="2" step="0.05" value="1" data-bm="contrast">
+            </div>
+            <div class="bmControlBox">
+                <label>Saturation <span data-bm="saturateVal">100%</span></label>
+                <input type="range" min="0" max="2" step="0.05" value="1" data-bm="saturate">
+            </div>
+            <div class="bmControlBox">
+                <label>Blur <span data-bm="blurVal">0px</span></label>
+                <input type="range" min="0" max="15" step="1" value="0" data-bm="blur">
+            </div>
+            <div class="bmControlBox">
+                <label>Hue Rotate <span data-bm="hueVal">0°</span></label>
+                <input type="range" min="0" max="360" step="1" value="0" data-bm="hue">
+            </div>
+            <div class="bmControlBox">
+                <label>Grayscale <span data-bm="grayscaleVal">0%</span></label>
+                <input type="range" min="0" max="1" step="0.05" value="0" data-bm="grayscale">
+            </div>
+            <div class="bmControlBox">
+                <label>Sepia <span data-bm="sepiaVal">0%</span></label>
+                <input type="range" min="0" max="1" step="0.05" value="0" data-bm="sepia">
+            </div>
+        </div>
+        <div class="bmActionRow">
+            <button type="button" class="bmBtn bmBtnIndigo" data-bm="flipH">Flip Horizontal</button>
+            <button type="button" class="bmBtn bmBtnIndigo" data-bm="flipV">Flip Vertical</button>
+            <button type="button" class="bmBtn bmBtnPurple" data-bm="centerImage">Center Image</button>
+            <button type="button" class="bmBtn bmBtnAmber" data-bm="resetFilters">Reset Filters</button>
+        </div>
+    </div>
+
+    <!-- TEXT PANEL -->
+    <div class="bmPanel" data-bm-panel="text">
+        <div class="bmFieldInline">
+            <label class="bmSwitchLabel">
+                <input type="checkbox" data-bm="textToggle">
+                <span>Show heading text on banner</span>
+            </label>
+        </div>
+        <div class="bmField">
+            <label>Heading Text</label>
+            <input type="text" value="Your Heading" maxlength="60" data-bm="textContent">
+        </div>
+        <div class="bmControlsGrid">
+            <div class="bmControlBox">
+                <label>Font</label>
+                <select data-bm="textFont">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Impact, sans-serif">Impact</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+            </div>
+            <div class="bmControlBox">
+                <label>Size <span data-bm="textSizeVal">64px</span></label>
+                <input type="range" min="12" max="220" step="1" value="64" data-bm="textSize">
+            </div>
+            <div class="bmControlBox">
+                <label>Text Color</label>
+                <input type="color" value="#ffffff" data-bm="textColor">
+            </div>
+            <div class="bmControlBox">
+                <label>Opacity <span data-bm="textOpacityVal">100%</span></label>
+                <input type="range" min="0" max="1" step="0.05" value="1" data-bm="textOpacity">
+            </div>
+        </div>
+        <div class="bmFieldInline">
+            <label>Style</label>
+            <div class="bmSeg">
+                <button type="button" class="bmSegBtn active" data-bm-toggle="textBold">Bold</button>
+                <button type="button" class="bmSegBtn" data-bm-toggle="textItalic">Italic</button>
+                <button type="button" class="bmSegBtn active" data-bm-toggle="textShadow">Shadow</button>
+            </div>
+        </div>
+        <div class="bmFieldInline">
+            <label>Align</label>
+            <div class="bmSeg">
+                <button type="button" class="bmSegBtn" data-bm-align="left">Left</button>
+                <button type="button" class="bmSegBtn active" data-bm-align="center">Center</button>
+                <button type="button" class="bmSegBtn" data-bm-align="right">Right</button>
+            </div>
+        </div>
+        <div class="bmFieldInline">
+            <label>Quick Position</label>
+            <div class="bmAnchorGrid" data-bm-anchor-group="text">
+                <button type="button" class="bmAnchorDot" data-x="0.02" data-y="0.15" title="Top Left"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.5" data-y="0.15" title="Top Center"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.98" data-y="0.15" title="Top Right"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.02" data-y="0.5" title="Middle Left"></button>
+                <button type="button" class="bmAnchorDot active" data-x="0.5" data-y="0.5" title="Center"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.98" data-y="0.5" title="Middle Right"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.02" data-y="0.85" title="Bottom Left"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.5" data-y="0.85" title="Bottom Center"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.98" data-y="0.85" title="Bottom Right"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGO PANEL -->
+    <div class="bmPanel" data-bm-panel="logo">
+        <div class="bmActionRow">
+            <label class="bmBtn bmBtnPurple bmUploadBtn">Upload Logo / Watermark
+                <input type="file" accept="image/*" data-bm="logoInput">
+            </label>
+            <button type="button" class="bmBtn bmBtnRed" data-bm="removeLogo">Remove Logo</button>
+        </div>
+        <div class="bmControlsGrid">
+            <div class="bmControlBox">
+                <label>Logo Size <span data-bm="logoScaleVal">15%</span></label>
+                <input type="range" min="0.03" max="0.6" step="0.01" value="0.15" data-bm="logoScale">
+            </div>
+            <div class="bmControlBox">
+                <label>Logo Opacity <span data-bm="logoOpacityVal">100%</span></label>
+                <input type="range" min="0" max="1" step="0.05" value="1" data-bm="logoOpacity">
+            </div>
+        </div>
+        <div class="bmFieldInline">
+            <label>Quick Position</label>
+            <div class="bmAnchorGrid" data-bm-anchor-group="logo">
+                <button type="button" class="bmAnchorDot" data-x="0.08" data-y="0.15" title="Top Left"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.5" data-y="0.15" title="Top Center"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.92" data-y="0.15" title="Top Right"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.08" data-y="0.5" title="Middle Left"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.5" data-y="0.5" title="Center"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.92" data-y="0.5" title="Middle Right"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.08" data-y="0.85" title="Bottom Left"></button>
+                <button type="button" class="bmAnchorDot" data-x="0.5" data-y="0.85" title="Bottom Center"></button>
+                <button type="button" class="bmAnchorDot active" data-x="0.92" data-y="0.85" title="Bottom Right"></button>
+            </div>
+        </div>
+        <p class="bmNote">Tip: switch "Move" to <b>Logo</b> above the tabs, then drag it into place — or use Quick Position, or arrow keys to nudge.</p>
+    </div>
+
+    <!-- STYLE PANEL -->
+    <div class="bmPanel" data-bm-panel="style">
+        <div class="bmFieldInline">
+            <label>Background</label>
+            <div class="bmSeg">
+                <button type="button" class="bmSegBtn active" data-bm-bg="solid">Solid</button>
+                <button type="button" class="bmSegBtn" data-bm-bg="gradient">Gradient</button>
+            </div>
+        </div>
+        <div class="bmControlsGrid">
+            <div class="bmControlBox">
+                <label>Color 1</label>
+                <input type="color" value="#ffffff" data-bm="bgColor1">
+            </div>
+            <div class="bmControlBox" data-bm="bgColor2Box" style="display:none;">
+                <label>Color 2</label>
+                <input type="color" value="#4f46e5" data-bm="bgColor2">
+            </div>
+            <div class="bmControlBox" data-bm="bgAngleBox" style="display:none;">
+                <label>Angle <span data-bm="bgAngleVal">135°</span></label>
+                <input type="range" min="0" max="360" step="1" value="135" data-bm="bgAngle">
+            </div>
+        </div>
+        <div class="bmFieldInline">
+            <label class="bmSwitchLabel">
+                <input type="checkbox" data-bm="borderToggle">
+                <span>Add border</span>
+            </label>
+        </div>
+        <div class="bmControlsGrid">
+            <div class="bmControlBox">
+                <label>Border Color</label>
+                <input type="color" value="#4f46e5" data-bm="borderColor">
+            </div>
+            <div class="bmControlBox">
+                <label>Border Width <span data-bm="borderWidthVal">8px</span></label>
+                <input type="range" min="1" max="40" step="1" value="8" data-bm="borderWidth">
+            </div>
+            <div class="bmControlBox">
+                <label>Corner Radius <span data-bm="radiusVal">0px</span></label>
+                <input type="range" min="0" max="150" step="1" value="0" data-bm="radius">
+            </div>
+        </div>
+    </div>
+
+    <div class="bmActionRow bmDownloadRow">
+        <label class="bmBtn bmBtnDark bmUploadBtn">Upload Image
+            <input type="file" accept="image/*" data-bm="imageInput">
+        </label>
+        <button type="button" class="bmBtn bmBtnGreen" data-bm="downloadJpg">Download JPG</button>
+        <button type="button" class="bmBtn bmBtnTeal" data-bm="downloadPng">Download PNG</button>
+        <button type="button" class="bmBtn bmBtnCyan" data-bm="downloadWebp">Download WEBP</button>
+    </div>
+    <div class="bmActionRow">
+        <div class="bmControlBox" style="flex:1;">
+            <label>JPG / WEBP Quality <span data-bm="qualityVal">92%</span></label>
+            <input type="range" min="0.3" max="1" step="0.02" value="0.92" data-bm="quality">
+        </div>
+        <button type="button" class="bmBtn bmBtnRed" data-bm="removeImage">Remove Image</button>
+        <button type="button" class="bmBtn bmBtnAmber" data-bm="resetAll">Reset All</button>
+    </div>
+
+</div>
+
+<style>
+.bmTool, .bmTool *{ box-sizing:border-box !important; }
+
+.bmTool{
+    --bm-primary:#4f46e5;
+    --bm-primary-dark:#3730a3;
+    --bm-dark:#1e293b;
+    --bm-success:#10b981;
+    --bm-teal:#0ea5e9;
+    --bm-cyan:#06b6d4;
+    --bm-purple:#7c3aed;
+    --bm-amber:#f59e0b;
+    --bm-red:#ef4444;
+    --bm-border:#e2e8f0;
+    --bm-bg:#ffffff;
+    --bm-text:#1e293b;
+    --bm-muted:#64748b;
+
+    max-width:920px;
+    margin:20px auto;
+    font-family:-apple-system,"Segoe UI",Arial,sans-serif !important;
+    background:var(--bm-bg) !important;
+    padding:20px;
+    border-radius:16px;
+    border:1px solid var(--bm-border);
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    color:var(--bm-text);
+    line-height:1.4;
+}
+
+.bmTool .bmHeader{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:12px;
+}
+
+.bmTool h3.bmTitle{
+    margin:0 !important;
+    padding:0 !important;
+    font-size:20px !important;
+    font-weight:800 !important;
+    color:var(--bm-dark) !important;
+    background:none !important;
+    border:none !important;
+    letter-spacing:0.2px;
+}
+
+.bmTool .bmDim{
+    font-size:12px;
+    font-weight:600;
+    color:var(--bm-muted) !important;
+    background:#f1f5f9;
+    padding:4px 10px;
+    border-radius:20px;
+}
+
+.bmTool .bmStage{
+    width:100%;
+    height:340px;
+    background:repeating-conic-gradient(#f1f5f9 0% 25%, #e8edf3 0% 50%) 50% / 24px 24px;
+    border-radius:12px;
+    border:2px solid var(--bm-border);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    touch-action:none;
+    cursor:grab;
+    user-select:none;
+}
+.bmTool .bmStage:active{ cursor:grabbing; }
+
+.bmTool .bmStage canvas{
+    max-width:100%;
+    max-height:100%;
+    display:block;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+}
+
+.bmTool .bmEmptyMsg{
+    position:absolute;
+    max-width:80%;
+    text-align:center;
+    font-size:13px;
+    color:var(--bm-muted);
+    font-weight:600;
+    pointer-events:none;
+    background:#fff;
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px dashed var(--bm-border);
+}
+
+.bmTool .bmDropOverlay{
+    position:absolute;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:rgba(79,70,229,0.15);
+    border:3px dashed var(--bm-primary);
+    border-radius:10px;
+    color:var(--bm-primary-dark) !important;
+    font-weight:800;
+    font-size:15px;
+    pointer-events:none;
+    z-index:5;
+}
+.bmTool .bmDropOverlay.active{ display:flex; }
+
+.bmTool .bmAnchorGrid{
+    display:grid;
+    grid-template-columns:repeat(3, 26px);
+    grid-template-rows:repeat(3, 26px);
+    gap:6px;
+    background:#f1f5f9;
+    padding:8px;
+    border-radius:10px;
+}
+.bmTool .bmAnchorDot{
+    width:26px;
+    height:26px;
+    border-radius:6px;
+    border:1px solid var(--bm-border) !important;
+    background:#fff !important;
+    cursor:pointer;
+    position:relative;
+}
+.bmTool .bmAnchorDot::after{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--bm-muted);
+    transform:translate(-50%,-50%);
+}
+.bmTool .bmAnchorDot.active{ background:var(--bm-primary) !important; border-color:var(--bm-primary) !important; }
+.bmTool .bmAnchorDot.active::after{ background:#fff; }
+
+.bmTool .bmMoveRow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:12px;
+    font-size:12px;
+}
+.bmTool .bmMoveLabel{ font-weight:700; color:var(--bm-text); }
+.bmTool .bmHint{ color:var(--bm-muted); font-size:11px; margin-left:auto; }
+
+.bmTool .bmSeg{
+    display:inline-flex;
+    background:#f1f5f9;
+    border-radius:8px;
+    padding:3px;
+    gap:3px;
+}
+.bmTool .bmSegBtn{
+    border:none;
+    background:transparent;
+    color:var(--bm-muted) !important;
+    padding:6px 12px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+.bmTool .bmSegBtn.active{
+    background:var(--bm-primary) !important;
+    color:#fff !important;
+}
+.bmTool .bmSegBtn:disabled{
+    opacity:0.4;
+    cursor:not-allowed;
+}
+
+.bmTool .bmTabs{
+    display:flex;
+    gap:6px;
+    margin-top:16px;
+    border-bottom:2px solid var(--bm-border);
+    overflow-x:auto;
+}
+.bmTool .bmTabBtn{
+    border:none;
+    background:transparent;
+    padding:9px 14px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--bm-muted) !important;
+    cursor:pointer;
+    border-bottom:3px solid transparent;
+    white-space:nowrap;
+}
+.bmTool .bmTabBtn.active{
+    color:var(--bm-primary) !important;
+    border-bottom-color:var(--bm-primary);
+}
+
+.bmTool .bmPanel{ display:none; padding-top:14px; }
+.bmTool .bmPanel.active{ display:block; }
+
+.bmTool .bmPlatformGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:8px;
+}
+.bmTool .bmPlatformCard{
+    padding:10px 6px;
+    border:1px solid var(--bm-border);
+    border-radius:10px;
+    cursor:pointer;
+    text-align:center;
+    transition:0.15s;
+    background:#fff;
+}
+.bmTool .bmPlatformCard.active{
+    border-color:var(--bm-primary);
+    background:#eef2ff;
+}
+.bmTool .bmPlatformCard span{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--bm-text) !important;
+}
+.bmTool .bmPlatformCard small{
+    font-size:11px;
+    color:var(--bm-muted) !important;
+}
+
+.bmTool .bmCustomSize{
+    display:flex;
+    gap:10px;
+    align-items:end;
+    flex-wrap:wrap;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px dashed var(--bm-border);
+}
+
+.bmTool .bmField{ display:flex; flex-direction:column; gap:4px; flex:1; min-width:120px; }
+.bmTool .bmField label{ font-size:11px; font-weight:700; color:var(--bm-muted) !important; }
+.bmTool .bmField input[type="text"],
+.bmTool .bmField input[type="number"]{
+    padding:9px 10px;
+    border:1px solid var(--bm-border);
+    border-radius:8px;
+    font-size:13px;
+    width:100%;
+    color:var(--bm-text) !important;
+    background:#fff !important;
+}
+
+.bmTool .bmFieldInline{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:14px;
+}
+.bmTool .bmFieldInline > label{ font-size:12px; font-weight:700; color:var(--bm-text) !important; }
+
+.bmTool .bmSwitchLabel{
+    display:flex !important;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:700;
+    color:var(--bm-text) !important;
+    cursor:pointer;
+}
+.bmTool .bmSwitchLabel input{ width:16px; height:16px; }
+
+.bmTool .bmControlsGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:10px;
+    margin-top:12px;
+}
+.bmTool .bmControlBox{
+    border:1px solid var(--bm-border);
+    padding:10px;
+    border-radius:10px;
+    font-size:12px;
+}
+.bmTool .bmControlBox label{
+    display:flex;
+    justify-content:space-between;
+    font-weight:700;
+    color:var(--bm-text) !important;
+    margin-bottom:4px;
+}
+.bmTool .bmControlBox label span{ color:var(--bm-primary) !important; font-weight:700; }
+
+.bmTool input[type="range"]{ width:100%; accent-color:var(--bm-primary); }
+.bmTool input[type="color"]{
+    width:100%;
+    height:34px;
+    border:1px solid var(--bm-border);
+    border-radius:6px;
+    padding:2px;
+    cursor:pointer;
+    background:#fff;
+}
+.bmTool select{
+    width:100%;
+    padding:8px;
+    border:1px solid var(--bm-border);
+    border-radius:8px;
+    font-size:13px;
+    background:#fff !important;
+    color:var(--bm-text) !important;
+}
+
+.bmTool .bmNote{
+    font-size:12px;
+    color:var(--bm-muted) !important;
+    margin-top:12px;
+    background:#f8fafc;
+    padding:10px 12px;
+    border-radius:8px;
+}
+
+.bmTool .bmActionRow{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.bmTool .bmDownloadRow{ padding-top:14px; border-top:1px solid var(--bm-border); }
+
+.bmTool .bmBtn{
+    flex:1;
+    min-width:130px;
+    padding:12px 14px;
+    border-radius:8px;
+    border:none !important;
+    cursor:pointer;
+    font-weight:700 !important;
+    font-size:13px !important;
+    text-align:center;
+    color:#fff !important;
+    transition:filter 0.15s, transform 0.1s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1.2;
+}
+.bmTool .bmBtn:hover{ filter:brightness(1.08); }
+.bmTool .bmBtn:active{ transform:translateY(1px); }
+
+.bmTool .bmBtnDark{ background:var(--bm-dark) !important; }
+.bmTool .bmBtnIndigo{ background:var(--bm-primary) !important; }
+.bmTool .bmBtnPurple{ background:var(--bm-purple) !important; }
+.bmTool .bmBtnGreen{ background:var(--bm-success) !important; }
+.bmTool .bmBtnTeal{ background:var(--bm-teal) !important; }
+.bmTool .bmBtnCyan{ background:var(--bm-cyan) !important; }
+.bmTool .bmBtnAmber{ background:var(--bm-amber) !important; }
+.bmTool .bmBtnRed{ background:var(--bm-red) !important; }
+
+.bmTool .bmUploadBtn{ position:relative; overflow:hidden; }
+.bmTool input[type="file"]{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    cursor:pointer;
+    width:100%;
+    height:100%;
+}
+
+@media (max-width:640px){
+    .bmTool{ padding:14px; margin:10px auto; border-radius:12px; }
+    .bmTool .bmStage{ height:230px; }
+    .bmTool .bmTitle{ font-size:17px !important; }
+    .bmTool .bmHint{ display:none; }
+    .bmTool .bmBtn{ min-width:100%; flex:1 1 100%; }
+    .bmTool .bmControlsGrid{ grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); }
+    .bmTool .bmCustomSize{ flex-direction:column; align-items:stretch; }
+}
+</style>
+
+<script>
+(function(){
+  try{
+
+    /* Robust container lookup: works with document.currentScript when the
+       widget is parsed normally, and falls back to finding the last
+       not-yet-initialized .bmTool on the page for embed setups (popups,
+       AJAX-loaded content, page builders) where currentScript can be null. */
+    var root = null;
+    if(document.currentScript && document.currentScript.previousElementSibling &&
+       document.currentScript.previousElementSibling.classList &&
+       document.currentScript.previousElementSibling.classList.contains('bmTool')){
+        root = document.currentScript.previousElementSibling;
+    }
+    if(!root){
+        var all = document.querySelectorAll('.bmTool');
+        for(var i = all.length - 1; i >= 0; i--){
+            if(!all[i].getAttribute('data-bm-ready')){ root = all[i]; break; }
+        }
+    }
+    if(!root){ return; }
+    root.setAttribute('data-bm-ready', '1');
+
+    function q(sel){ return root.querySelector('[data-bm="'+sel+'"]'); }
+    function qAll(sel){ return root.querySelectorAll(sel); }
+
+    var canvas = q('canvas');
+    var ctx = canvas.getContext('2d');
+    var stage = q('stage');
+    var emptyMsg = q('emptyMsg');
+    var dropOverlay = q('dropOverlay');
+
+    var img = null;
+    var logoImg = null;
+
+    var state = {
+        w:1500, h:500, name:'Twitter Header',
+        fit:'cover',
+        imgX:0, imgY:0, zoom:1, rotate:0, flipH:1, flipV:1,
+        brightness:1, contrast:1, saturate:1, blur:0, hue:0, grayscale:0, sepia:0,
+        bgType:'solid', bgColor1:'#ffffff', bgColor2:'#4f46e5', bgAngle:135,
+        borderOn:false, borderColor:'#4f46e5', borderWidth:8, radius:0,
+        textOn:false, text:'Your Heading', textFont:"Arial, sans-serif", textSize:64,
+        textColor:'#ffffff', textOpacity:1, textBold:true, textItalic:false,
+        textShadow:true, textAlign:'center', textX:0.5, textY:0.5,
+        logoScale:0.15, logoOpacity:1, logoX:0.92, logoY:0.85
+    };
+
+    var moveMode = 'image';
+
+    /* ---------- TABS ---------- */
+    qAll('.bmTabBtn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            qAll('.bmTabBtn').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            var tab = btn.getAttribute('data-bm-tab');
+            qAll('.bmPanel').forEach(function(p){ p.classList.remove('active'); });
+            root.querySelector('[data-bm-panel="'+tab+'"]').classList.add('active');
+        });
+    });
+
+    /* ---------- MOVE MODE ---------- */
+    qAll('[data-bm-move]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            if(btn.disabled) return;
+            qAll('[data-bm-move]').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            moveMode = btn.getAttribute('data-bm-move');
+        });
+    });
+
+    /* ---------- PLATFORM PRESETS ---------- */
+    qAll('.bmPlatformCard').forEach(function(card){
+        card.addEventListener('click', function(){
+            qAll('.bmPlatformCard').forEach(function(c){ c.classList.remove('active'); });
+            card.classList.add('active');
+            state.w = parseInt(card.getAttribute('data-w'), 10);
+            state.h = parseInt(card.getAttribute('data-h'), 10);
+            state.name = card.getAttribute('data-name');
+            state.imgX = 0; state.imgY = 0;
+            q('customW').value = state.w;
+            q('customH').value = state.h;
+            updateDim();
+            draw();
+        });
+    });
+
+    q('applyCustom').addEventListener('click', function(){
+        var w = parseInt(q('customW').value, 10);
+        var h = parseInt(q('customH').value, 10);
+        if(!w || !h || w < 50 || h < 50){ alert('Please enter a valid width and height (minimum 50px).'); return; }
+        state.w = w; state.h = h; state.name = 'Custom';
+        qAll('.bmPlatformCard').forEach(function(c){ c.classList.remove('active'); });
+        state.imgX = 0; state.imgY = 0;
+        updateDim();
+        draw();
+    });
+
+    qAll('[data-bm-fit]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            qAll('[data-bm-fit]').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            state.fit = btn.getAttribute('data-bm-fit');
+            draw();
+        });
+    });
+
+    function updateDim(){
+        q('dimDisplay').textContent = state.name + ' — ' + state.w + ' × ' + state.h;
+    }
+
+    /* ---------- IMAGE UPLOAD (helpers shared by file-input, drag&drop, paste) ---------- */
+    function loadMainImageFile(file){
+        if(!file) return;
+        if(file.type && file.type.indexOf('image/') !== 0){
+            alert('Please choose an image file (JPG, PNG, WEBP, GIF...).');
+            return;
+        }
+        if(file.size > 25 * 1024 * 1024){
+            alert('That image is larger than 25MB. Please choose a smaller file.');
+            return;
+        }
+        var reader = new FileReader();
+        reader.onerror = function(){ alert('Could not read that file. Please try again.'); };
+        reader.onload = function(ev){
+            var im = new Image();
+            im.onerror = function(){ alert('That file could not be loaded as an image.'); };
+            im.onload = function(){
+                if(!im.width || !im.height){ alert('That image appears to be empty or corrupted.'); return; }
+                img = im;
+                state.imgX = 0; state.imgY = 0; state.zoom = 1; state.rotate = 0;
+                q('zoom').value = 1; q('rotate').value = 0;
+                syncRangeLabels();
+                emptyMsg.style.display = 'none';
+                draw();
+            };
+            im.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    function loadLogoFile(file){
+        if(!file) return;
+        if(file.type && file.type.indexOf('image/') !== 0){
+            alert('Please choose an image file for the logo.');
+            return;
+        }
+        var reader = new FileReader();
+        reader.onerror = function(){ alert('Could not read that logo file. Please try again.'); };
+        reader.onload = function(ev){
+            var im = new Image();
+            im.onerror = function(){ alert('That logo file could not be loaded.'); };
+            im.onload = function(){
+                if(!im.width || !im.height) return;
+                logoImg = im;
+                q('moveLogoBtn').disabled = false;
+                draw();
+            };
+            im.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    q('imageInput').addEventListener('change', function(e){
+        var file = e.target.files && e.target.files[0];
+        loadMainImageFile(file);
+        e.target.value = '';
+    });
+
+    q('removeImage').addEventListener('click', function(){
+        img = null;
+        emptyMsg.style.display = 'block';
+        draw();
+    });
+
+    /* ---------- LOGO UPLOAD ---------- */
+    q('logoInput').addEventListener('change', function(e){
+        var file = e.target.files && e.target.files[0];
+        loadLogoFile(file);
+        e.target.value = '';
+    });
+
+    q('removeLogo').addEventListener('click', function(){
+        logoImg = null;
+        q('moveLogoBtn').disabled = true;
+        if(moveMode === 'logo'){
+            root.querySelector('[data-bm-move="image"]').click();
+        }
+        draw();
+    });
+
+    /* ---------- IMAGE FILTER CONTROLS ---------- */
+    var rangeIds = ['zoom','rotate','brightness','contrast','saturate','blur','hue','grayscale','sepia'];
+    rangeIds.forEach(function(id){
+        q(id).addEventListener('input', function(){
+            state[id] = parseFloat(q(id).value);
+            syncRangeLabels();
+            draw();
+        });
+    });
+
+    function syncRangeLabels(){
+        q('zoomVal').textContent = Math.round(state.zoom * 100) + '%';
+        q('rotateVal').textContent = Math.round(state.rotate) + '°';
+        q('brightnessVal').textContent = Math.round(state.brightness * 100) + '%';
+        q('contrastVal').textContent = Math.round(state.contrast * 100) + '%';
+        q('saturateVal').textContent = Math.round(state.saturate * 100) + '%';
+        q('blurVal').textContent = Math.round(state.blur) + 'px';
+        q('hueVal').textContent = Math.round(state.hue) + '°';
+        q('grayscaleVal').textContent = Math.round(state.grayscale * 100) + '%';
+        q('sepiaVal').textContent = Math.round(state.sepia * 100) + '%';
+        q('textSizeVal').textContent = Math.round(state.textSize) + 'px';
+        q('textOpacityVal').textContent = Math.round(state.textOpacity * 100) + '%';
+        q('logoScaleVal').textContent = Math.round(state.logoScale * 100) + '%';
+        q('logoOpacityVal').textContent = Math.round(state.logoOpacity * 100) + '%';
+        q('borderWidthVal').textContent = Math.round(state.borderWidth) + 'px';
+        q('radiusVal').textContent = Math.round(state.radius) + 'px';
+        q('bgAngleVal').textContent = Math.round(state.bgAngle) + '°';
+        q('qualityVal').textContent = Math.round(parseFloat(q('quality').value) * 100) + '%';
+    }
+
+    q('flipH').addEventListener('click', function(){ state.flipH *= -1; draw(); });
+    q('flipV').addEventListener('click', function(){ state.flipV *= -1; draw(); });
+    q('centerImage').addEventListener('click', function(){ state.imgX = 0; state.imgY = 0; draw(); });
+    q('resetFilters').addEventListener('click', function(){
+        state.brightness=1; state.contrast=1; state.saturate=1; state.blur=0;
+        state.hue=0; state.grayscale=0; state.sepia=0; state.rotate=0;
+        state.flipH=1; state.flipV=1; state.zoom=1;
+        ['zoom','rotate','brightness','contrast','saturate','blur','hue','grayscale','sepia'].forEach(function(id){
+            q(id).value = state[id];
+        });
+        syncRangeLabels();
+        draw();
+    });
+
+    /* ---------- TEXT CONTROLS ---------- */
+    q('textToggle').addEventListener('change', function(){
+        state.textOn = q('textToggle').checked;
+        q('moveTextBtn').disabled = !state.textOn;
+        if(!state.textOn && moveMode === 'text'){
+            root.querySelector('[data-bm-move="image"]').click();
+        }
+        draw();
+    });
+    q('textContent').addEventListener('input', function(){ state.text = q('textContent').value || ' '; draw(); });
+    q('textFont').addEventListener('change', function(){ state.textFont = q('textFont').value; draw(); });
+    q('textSize').addEventListener('input', function(){ state.textSize = parseFloat(q('textSize').value); syncRangeLabels(); draw(); });
+    q('textColor').addEventListener('input', function(){ state.textColor = q('textColor').value; draw(); });
+    q('textOpacity').addEventListener('input', function(){ state.textOpacity = parseFloat(q('textOpacity').value); syncRangeLabels(); draw(); });
+
+    qAll('[data-bm-toggle]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var key = btn.getAttribute('data-bm-toggle');
+            state[key] = !state[key];
+            btn.classList.toggle('active', state[key]);
+            draw();
+        });
+    });
+
+    qAll('[data-bm-align]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            qAll('[data-bm-align]').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            state.textAlign = btn.getAttribute('data-bm-align');
+            draw();
+        });
+    });
+
+    /* ---------- LOGO CONTROLS ---------- */
+    q('logoScale').addEventListener('input', function(){ state.logoScale = parseFloat(q('logoScale').value); syncRangeLabels(); draw(); });
+    q('logoOpacity').addEventListener('input', function(){ state.logoOpacity = parseFloat(q('logoOpacity').value); syncRangeLabels(); draw(); });
+
+    /* ---------- QUICK POSITION (9-point anchor grids) ---------- */
+    qAll('.bmAnchorGrid').forEach(function(grid){
+        var group = grid.getAttribute('data-bm-anchor-group');
+        grid.querySelectorAll('.bmAnchorDot').forEach(function(dot){
+            dot.addEventListener('click', function(){
+                var x = parseFloat(dot.getAttribute('data-x'));
+                var y = parseFloat(dot.getAttribute('data-y'));
+                grid.querySelectorAll('.bmAnchorDot').forEach(function(d){ d.classList.remove('active'); });
+                dot.classList.add('active');
+                if(group === 'text'){ state.textX = x; state.textY = y; }
+                else if(group === 'logo'){ state.logoX = x; state.logoY = y; }
+                draw();
+            });
+        });
+    });
+
+    /* ---------- STYLE CONTROLS ---------- */
+    qAll('[data-bm-bg]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            qAll('[data-bm-bg]').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            state.bgType = btn.getAttribute('data-bm-bg');
+            q('bgColor2Box').style.display = state.bgType === 'gradient' ? 'block' : 'none';
+            q('bgAngleBox').style.display = state.bgType === 'gradient' ? 'block' : 'none';
+            draw();
+        });
+    });
+    q('bgColor1').addEventListener('input', function(){ state.bgColor1 = q('bgColor1').value; draw(); });
+    q('bgColor2').addEventListener('input', function(){ state.bgColor2 = q('bgColor2').value; draw(); });
+    q('bgAngle').addEventListener('input', function(){ state.bgAngle = parseFloat(q('bgAngle').value); syncRangeLabels(); draw(); });
+
+    q('borderToggle').addEventListener('change', function(){ state.borderOn = q('borderToggle').checked; draw(); });
+    q('borderColor').addEventListener('input', function(){ state.borderColor = q('borderColor').value; draw(); });
+    q('borderWidth').addEventListener('input', function(){ state.borderWidth = parseFloat(q('borderWidth').value); syncRangeLabels(); draw(); });
+    q('radius').addEventListener('input', function(){ state.radius = parseFloat(q('radius').value); syncRangeLabels(); draw(); });
+    q('quality').addEventListener('input', syncRangeLabels);
+
+    /* ---------- RESET ALL ---------- */
+    q('resetAll').addEventListener('click', function(){
+        if(!confirm('Reset everything? This clears filters, text, logo position and style.')) return;
+        img = null; logoImg = null;
+        state = {
+            w:1500, h:500, name:'Twitter Header', fit:'cover',
+            imgX:0, imgY:0, zoom:1, rotate:0, flipH:1, flipV:1,
+            brightness:1, contrast:1, saturate:1, blur:0, hue:0, grayscale:0, sepia:0,
+            bgType:'solid', bgColor1:'#ffffff', bgColor2:'#4f46e5', bgAngle:135,
+            borderOn:false, borderColor:'#4f46e5', borderWidth:8, radius:0,
+            textOn:false, text:'Your Heading', textFont:"Arial, sans-serif", textSize:64,
+            textColor:'#ffffff', textOpacity:1, textBold:true, textItalic:false,
+            textShadow:true, textAlign:'center', textX:0.5, textY:0.5,
+            logoScale:0.15, logoOpacity:1, logoX:0.92, logoY:0.85
+        };
+        moveMode = 'image';
+        emptyMsg.style.display = 'block';
+        q('moveTextBtn').disabled = true;
+        q('moveLogoBtn').disabled = true;
+        // reset UI controls manually
+        q('customW').value = 1500; q('customH').value = 500;
+        q('zoom').value=1; q('rotate').value=0; q('brightness').value=1; q('contrast').value=1;
+        q('saturate').value=1; q('blur').value=0; q('hue').value=0; q('grayscale').value=0; q('sepia').value=0;
+        q('textToggle').checked=false; q('textContent').value='Your Heading'; q('textFont').value="Arial, sans-serif";
+        q('textSize').value=64; q('textColor').value='#ffffff'; q('textOpacity').value=1;
+        q('logoScale').value=0.15; q('logoOpacity').value=1;
+        q('bgColor1').value='#ffffff'; q('bgColor2').value='#4f46e5'; q('bgAngle').value=135;
+        q('borderToggle').checked=false; q('borderColor').value='#4f46e5'; q('borderWidth').value=8; q('radius').value=0;
+        qAll('.bmPlatformCard').forEach(function(c,i){ c.classList.toggle('active', i===0); });
+        qAll('[data-bm-fit]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-bm-fit')==='cover'); });
+        qAll('[data-bm-bg]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-bm-bg')==='solid'); });
+        qAll('[data-bm-align]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-bm-align')==='center'); });
+        root.querySelector('[data-bm-toggle="textBold"]').classList.add('active');
+        root.querySelector('[data-bm-toggle="textItalic"]').classList.remove('active');
+        root.querySelector('[data-bm-toggle="textShadow"]').classList.add('active');
+        q('bgColor2Box').style.display='none'; q('bgAngleBox').style.display='none';
+        qAll('.bmAnchorGrid').forEach(function(grid){
+            var group = grid.getAttribute('data-bm-anchor-group');
+            grid.querySelectorAll('.bmAnchorDot').forEach(function(d){
+                var isDefault = group === 'text'
+                    ? (d.getAttribute('data-x') === '0.5' && d.getAttribute('data-y') === '0.5')
+                    : (d.getAttribute('data-x') === '0.92' && d.getAttribute('data-y') === '0.85');
+                d.classList.toggle('active', isDefault);
+            });
+        });
+        if(dropOverlay) dropOverlay.classList.remove('active');
+        root.querySelector('[data-bm-move="image"]').click();
+        updateDim();
+        syncRangeLabels();
+        draw();
+    });
+
+    /* ---------- DRAWING ---------- */
+    function roundedRectPath(c, x, y, w, h, r){
+        r = Math.max(0, Math.min(r, Math.abs(w)/2, Math.abs(h)/2));
+        c.beginPath();
+        c.moveTo(x+r, y);
+        c.arcTo(x+w, y, x+w, y+h, r);
+        c.arcTo(x+w, y+h, x, y+h, r);
+        c.arcTo(x, y+h, x, y, r);
+        c.arcTo(x, y, x+w, y, r);
+        c.closePath();
+    }
+
+    function draw(){
+      try{
+        var w = Math.max(1, Math.round(state.w) || 1);
+        var h = Math.max(1, Math.round(state.h) || 1);
+        canvas.width = w;
+        canvas.height = h;
+        state.w = w;
+        state.h = h;
+
+        ctx.save();
+        roundedRectPath(ctx, 0, 0, state.w, state.h, state.radius);
+        ctx.clip();
+
+        /* background */
+        if(state.bgType === 'gradient'){
+            var rad = state.bgAngle * Math.PI / 180;
+            var x0 = state.w/2 - Math.cos(rad) * state.w/2;
+            var y0 = state.h/2 - Math.sin(rad) * state.h/2;
+            var x1 = state.w/2 + Math.cos(rad) * state.w/2;
+            var y1 = state.h/2 + Math.sin(rad) * state.h/2;
+            var grad = ctx.createLinearGradient(x0, y0, x1, y1);
+            grad.addColorStop(0, state.bgColor1);
+            grad.addColorStop(1, state.bgColor2);
+            ctx.fillStyle = grad;
+        } else {
+            ctx.fillStyle = state.bgColor1;
+        }
+        ctx.fillRect(0, 0, state.w, state.h);
+
+        /* main image */
+        if(img && img.width > 0 && img.height > 0){
+            ctx.save();
+            ctx.filter = 'brightness('+state.brightness+') contrast('+state.contrast+') saturate('+state.saturate+') blur('+state.blur+'px) hue-rotate('+state.hue+'deg) grayscale('+state.grayscale+') sepia('+state.sepia+')';
+
+            var cx = state.w/2 + state.imgX;
+            var cy = state.h/2 + state.imgY;
+
+            ctx.translate(cx, cy);
+            ctx.rotate(state.rotate * Math.PI / 180);
+            ctx.scale(state.flipH, state.flipV);
+
+            var baseRatio = state.fit === 'cover'
+                ? Math.max(state.w / img.width, state.h / img.height)
+                : Math.min(state.w / img.width, state.h / img.height);
+            var ratio = baseRatio * state.zoom;
+            var dw = img.width * ratio;
+            var dh = img.height * ratio;
+
+            ctx.drawImage(img, -dw/2, -dh/2, dw, dh);
+            ctx.restore();
+        }
+
+        /* logo */
+        if(logoImg && logoImg.complete && logoImg.width > 0 && logoImg.height > 0){
+            ctx.save();
+            ctx.globalAlpha = state.logoOpacity;
+            var lw = state.w * state.logoScale;
+            var lh = lw * (logoImg.height / logoImg.width);
+            var lx = state.logoX * state.w - lw/2;
+            var ly = state.logoY * state.h - lh/2;
+            ctx.drawImage(logoImg, lx, ly, lw, lh);
+            ctx.restore();
+        }
+
+        /* text */
+        if(state.textOn && state.text){
+            ctx.save();
+            ctx.globalAlpha = state.textOpacity;
+            var weight = state.textBold ? '800' : '400';
+            var style = state.textItalic ? 'italic' : 'normal';
+            ctx.font = style + ' ' + weight + ' ' + state.textSize + 'px ' + state.textFont;
+            ctx.textAlign = state.textAlign;
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = state.textColor;
+            if(state.textShadow){
+                ctx.shadowColor = 'rgba(0,0,0,0.55)';
+                ctx.shadowBlur = Math.max(4, state.textSize * 0.08);
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+            }
+            var tx = state.textX * state.w;
+            var ty = state.textY * state.h;
+            var lines = String(state.text).split('\n');
+            var lineHeight = state.textSize * 1.15;
+            var startY = ty - ((lines.length - 1) * lineHeight) / 2;
+            lines.forEach(function(line, i){
+                ctx.fillText(line, tx, startY + i * lineHeight);
+            });
+            ctx.restore();
+        }
+
+        ctx.restore();
+
+        /* border (drawn after clip restore so it sits cleanly on the rounded edge) */
+        if(state.borderOn){
+            ctx.save();
+            roundedRectPath(ctx, state.borderWidth/2, state.borderWidth/2, state.w - state.borderWidth, state.h - state.borderWidth, Math.max(0, state.radius - state.borderWidth/2));
+            ctx.lineWidth = state.borderWidth;
+            ctx.strokeStyle = state.borderColor;
+            ctx.stroke();
+            ctx.restore();
+        }
+      } catch(err){
+        console.error('Banner Maker draw error:', err);
+      }
+    }
+
+    /* ---------- DRAG / PINCH (Pointer Events) ---------- */
+    var pointers = {};
+    var pointerCount = 0;
+    var lastPinchDist = null;
+    var dragLast = null;
+
+    function displayScale(){
+        var rect = canvas.getBoundingClientRect();
+        if(rect.width === 0) return 1;
+        return state.w / rect.width;
+    }
+
+    stage.addEventListener('pointerdown', function(e){
+        if(!img && moveMode === 'image') return;
+        stage.setPointerCapture && stage.setPointerCapture(e.pointerId);
+        pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+        pointerCount = Object.keys(pointers).length;
+        dragLast = {x:e.clientX, y:e.clientY};
+        lastPinchDist = null;
+    });
+
+    stage.addEventListener('pointermove', function(e){
+        if(!pointers[e.pointerId]) return;
+        pointers[e.pointerId] = {x:e.clientX, y:e.clientY};
+        var ids = Object.keys(pointers);
+
+        if(ids.length >= 2){
+            var p1 = pointers[ids[0]], p2 = pointers[ids[1]];
+            var dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+            if(lastPinchDist){
+                var delta = (dist - lastPinchDist) * 0.006;
+                state.zoom = Math.min(4, Math.max(1, state.zoom + delta));
+                q('zoom').value = state.zoom;
+                syncRangeLabels();
+                draw();
+            }
+            lastPinchDist = dist;
+            return;
+        }
+
+        if(!dragLast) return;
+        var scale = displayScale();
+        var dx = (e.clientX - dragLast.x) * scale;
+        var dy = (e.clientY - dragLast.y) * scale;
+        dragLast = {x:e.clientX, y:e.clientY};
+
+        if(moveMode === 'image' && img){
+            state.imgX += dx;
+            state.imgY += dy;
+        } else if(moveMode === 'text' && state.textOn){
+            state.textX = Math.min(1, Math.max(0, state.textX + dx / state.w));
+            state.textY = Math.min(1, Math.max(0, state.textY + dy / state.h));
+        } else if(moveMode === 'logo' && logoImg){
+            state.logoX = Math.min(1, Math.max(0, state.logoX + dx / state.w));
+            state.logoY = Math.min(1, Math.max(0, state.logoY + dy / state.h));
+        }
+        draw();
+    });
+
+    function endPointer(e){
+        delete pointers[e.pointerId];
+        pointerCount = Object.keys(pointers).length;
+        if(pointerCount < 2) lastPinchDist = null;
+        if(pointerCount === 0) dragLast = null;
+    }
+    stage.addEventListener('pointerup', endPointer);
+    stage.addEventListener('pointercancel', endPointer);
+    stage.addEventListener('pointerleave', function(e){ if(pointerCount <= 1) endPointer(e); });
+
+    /* mouse wheel zoom (desktop convenience) */
+    stage.addEventListener('wheel', function(e){
+        if(!img) return;
+        e.preventDefault();
+        var delta = e.deltaY > 0 ? -0.05 : 0.05;
+        state.zoom = Math.min(4, Math.max(1, state.zoom + delta));
+        q('zoom').value = state.zoom;
+        syncRangeLabels();
+        draw();
+    }, {passive:false});
+
+    /* ---------- DRAG & DROP UPLOAD ---------- */
+    var dragCounter = 0;
+    stage.addEventListener('dragenter', function(e){
+        e.preventDefault();
+        dragCounter++;
+        if(dropOverlay) dropOverlay.classList.add('active');
+    });
+    stage.addEventListener('dragover', function(e){ e.preventDefault(); });
+    stage.addEventListener('dragleave', function(e){
+        e.preventDefault();
+        dragCounter = Math.max(0, dragCounter - 1);
+        if(dragCounter === 0 && dropOverlay) dropOverlay.classList.remove('active');
+    });
+    stage.addEventListener('drop', function(e){
+        e.preventDefault();
+        dragCounter = 0;
+        if(dropOverlay) dropOverlay.classList.remove('active');
+        var file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if(file) loadMainImageFile(file);
+    });
+
+    /* ---------- PASTE FROM CLIPBOARD ---------- */
+    root.addEventListener('paste', function(e){
+        var items = e.clipboardData && e.clipboardData.items;
+        if(!items) return;
+        for(var i = 0; i < items.length; i++){
+            if(items[i].type && items[i].type.indexOf('image/') === 0){
+                var file = items[i].getAsFile();
+                if(file){ loadMainImageFile(file); e.preventDefault(); }
+                break;
+            }
+        }
+    });
+
+    /* ---------- KEYBOARD NUDGE ---------- */
+    stage.addEventListener('keydown', function(e){
+        var keys = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'];
+        if(keys.indexOf(e.key) === -1) return;
+        e.preventDefault();
+        var step = e.shiftKey ? 20 : 4;
+        var dx = 0, dy = 0;
+        if(e.key === 'ArrowUp') dy = -step;
+        if(e.key === 'ArrowDown') dy = step;
+        if(e.key === 'ArrowLeft') dx = -step;
+        if(e.key === 'ArrowRight') dx = step;
+
+        if(moveMode === 'image' && img){
+            state.imgX += dx; state.imgY += dy;
+        } else if(moveMode === 'text' && state.textOn){
+            state.textX = Math.min(1, Math.max(0, state.textX + dx / state.w));
+            state.textY = Math.min(1, Math.max(0, state.textY + dy / state.h));
+        } else if(moveMode === 'logo' && logoImg){
+            state.logoX = Math.min(1, Math.max(0, state.logoX + dx / state.w));
+            state.logoY = Math.min(1, Math.max(0, state.logoY + dy / state.h));
+        }
+        draw();
+    });
+
+    /* ---------- DOWNLOAD ---------- */
+    function download(type, ext){
+        if(!img && !state.textOn && !logoImg){
+            if(!confirm('No image, logo or text added yet — download the plain background anyway?')) return;
+        }
+        try{
+            var quality = parseFloat(q('quality').value) || 0.92;
+            var dataUrl = canvas.toDataURL(type, (type === 'image/png') ? undefined : quality);
+            var a = document.createElement('a');
+            a.download = (state.name || 'banner').replace(/[^a-z0-9\-_ ]/gi, '') + '.' + ext;
+            a.href = dataUrl;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        } catch(err){
+            console.error('Banner Maker download error:', err);
+            alert('Sorry, the download failed. Very large banner sizes can sometimes hit browser limits — try a smaller custom size.');
+        }
+    }
+    q('downloadJpg').addEventListener('click', function(){ download('image/jpeg', 'jpg'); });
+    q('downloadPng').addEventListener('click', function(){ download('image/png', 'png'); });
+    q('downloadWebp').addEventListener('click', function(){ download('image/webp', 'webp'); });
+
+    /* ---------- INIT ---------- */
+    updateDim();
+    syncRangeLabels();
+    draw();
+
+  } catch(fatalErr){
+    console.error('Banner Maker failed to initialize:', fatalErr);
+    var host = (document.currentScript && document.currentScript.previousElementSibling) ||
+               document.querySelector('.bmTool');
+    if(host){
+        var msg = document.createElement('div');
+        msg.style.cssText = 'padding:14px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;color:#991b1b;font-family:Arial,sans-serif;font-size:13px;margin-top:10px;';
+        msg.textContent = 'Banner Maker could not start in this page (see browser console for details). This usually happens if the widget is loaded inside a popup or tab that inserts HTML without running scripts — try placing it directly on the page.';
+        host.appendChild(msg);
+    }
+  }
+})();
+</script>
